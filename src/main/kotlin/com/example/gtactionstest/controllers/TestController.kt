@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController
 class TestController {
 
     @GetMapping
-    fun get() = "Hello World! We're going to test the Github actions"
+    fun get() = "Hello World! We're going to test the Github actions!"
 }
