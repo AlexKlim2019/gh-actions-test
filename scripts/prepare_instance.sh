@@ -2,7 +2,7 @@
 echo ">>>Dokku is being installed…" && 
 wget https://raw.githubusercontent.com/dokku/dokku/v0.28.3/bootstrap.sh &&
 sudo DOKKU_TAG=v0.28.3 bash bootstrap.sh &&
-echo ">>> New app is being added..." && sudo dokku apps:create educational-platform &&
+echo ">>> New app is being added..." && sudo dokku apps:create gha-test &&
 
 echo ">>> Current swap file:" && free -h &&
 echo ">>> Available space:" && df -h &&
