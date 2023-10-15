@@ -27,14 +27,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-application {
-    mainClass.set("com.example.gtactionstest.GtActionsTestApplicationKt")
-}
-
-springBoot {
-    mainClass.set("com.example.gtactionstest.GtActionsTestApplicationKt")
-}
-
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"
@@ -44,10 +36,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.example.gtactionstest.GtActionsTestApplication"
-    }
 }
