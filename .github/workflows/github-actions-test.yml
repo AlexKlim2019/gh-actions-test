@@ -9,20 +9,33 @@ permissions:
   contents: read
 
 jobs:
-  build:
+#  build:
 
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3.13.0
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+      runs-on: ubuntu-latest
+      -run: echo "github.event_name - ${{ github.event_name }}"
+#      - uses: actions/checkout@v3
+#        with:
+#          ref: master
+#          fetch-depth: 0
+#
+#      - name: Setup Java JDK
+#        uses: actions/setup-java@v3.13.0
+#        with:
+#          java-version: '17'
+#          distribution: 'temurin'
+#
+#      - name: Build with Gradle
+#        uses: gradle/gradle-build-action@v2.9.0
+#        with:
+#          gradle-version: 7.6
+#          arguments: build
 
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2.9.0
-        with:
-          gradle-version: 7.6
-          arguments: build
+#      - name: Push to dokku
+#        uses: dokku/github-action@master
+#        with:
+#          branch: 'master'
+#          git_remote_url: ${{ vars.STAGE_REMOTE_URL }}
+#          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
