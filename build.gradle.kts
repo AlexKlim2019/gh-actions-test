@@ -5,6 +5,8 @@ plugins {
     id("io.spring.dependency-management") version "1.1.3"
     kotlin("jvm") version "1.8.22"
     kotlin("plugin.spring") version "1.8.22"
+
+    application
 }
 
 group = "com.example"
@@ -36,8 +38,8 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.example.gtactionstest.GtActionsTestApplicationKt"
-    }
-}
+//tasks.withType<Jar> {
+//    manifest {
+//        attributes["Main-Class"] = "com.example.gtactionstest.GtActionsTestApplication"
+//    }
+//}
