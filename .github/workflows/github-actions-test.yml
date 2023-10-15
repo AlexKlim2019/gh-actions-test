@@ -18,7 +18,7 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
-      - run: echo "good ${{ github.ref }}"
+      - run: echo "var ${{ vars.STAGE_REMOTE_URL }}"
 #
 #      - name: Setup Java JDK
 #        uses: actions/setup-java@v3.13.0
