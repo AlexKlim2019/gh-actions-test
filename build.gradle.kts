@@ -38,6 +38,6 @@ tasks.withType<Test> {
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "com.example.gtactionstest.GtActionsTestApplication"
+        attributes["Main-Class"] = "com.example.gtactionstest.GtActionsTestApplicationKt"
     }
 }
