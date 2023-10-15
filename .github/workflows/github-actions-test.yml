@@ -9,17 +9,16 @@ permissions:
   contents: read
 
 jobs:
-#  build:
+  build:
 
-#    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
-      runs-on: ubuntu-latest
-      -run: echo "github.event_name - ${{ github.event_name }}"
-#      - uses: actions/checkout@v3
-#        with:
-#          ref: master
-#          fetch-depth: 0
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+          fetch-depth: 0
+      - run: echo "good ${{ github.ref }}"
 #
 #      - name: Setup Java JDK
 #        uses: actions/setup-java@v3.13.0
