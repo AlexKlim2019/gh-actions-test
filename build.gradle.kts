@@ -11,6 +11,7 @@ plugins {
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
+var mainClass = "com.example.gtactionstest.GtActionsTestApplication"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -38,8 +39,8 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-//tasks.withType<Jar> {
-//    manifest {
-//        attributes["Main-Class"] = "com.example.gtactionstest.GtActionsTestApplication"
-//    }
-//}
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "$mainClass"
+    }
+}
