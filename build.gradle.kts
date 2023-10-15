@@ -9,12 +9,6 @@ plugins {
     application
 }
 
-val mainClass = "com.example.gtactionstest.GtActionsTestApplication"
-
-application {
-    mainClassName = mainClass.toString()
-}
-
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
@@ -42,10 +36,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = mainClass
-    }
 }
