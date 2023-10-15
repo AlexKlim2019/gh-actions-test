@@ -9,8 +9,10 @@ plugins {
     application
 }
 
+val mainClass = "com.example.gtactionstest.GtActionsTestApplication"
+
 application {
-    mainClassName = "com.example.gtactionstest.GtActionsTestApplication"
+    mainClassName = mainClass.toString()
 }
 
 group = "com.example"
@@ -42,8 +44,8 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-//tasks.withType<Jar> {
-//    manifest {
-//        attributes["Main-Class"] = mainClass
-//    }
-//}
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = mainClass
+    }
+}
