@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
       - run: |
             git status
-      - run: echo "$GITHUB_WORKSPACE"
+      - run: echo "The default working directory is $GITHUB_WORKSPACE. The name of action is $GITHUB_ACTION"
 
 #      - name: Setup Java JDK
 #        uses: actions/setup-java@v3.13.0
