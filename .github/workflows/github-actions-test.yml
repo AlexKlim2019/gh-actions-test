@@ -1,9 +1,9 @@
 name: Test ANK
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
+#  push:
+#    branches:
+#      - master
 
 permissions:
   contents: read
@@ -16,7 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: master
+#          ref: master
+          ref: test-events
           fetch-depth: 0
       - run: |
             git status
