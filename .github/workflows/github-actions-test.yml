@@ -1,9 +1,9 @@
 name: Test ANK
 
-on: [push]
-#  push:
-#    branches:
-#      - master
+on:
+  push:
+    branches:
+      - master
 
 permissions:
   contents: read
@@ -38,10 +38,10 @@ jobs:
 #          gradle-version: 7.6
 #          arguments: build
 
-#      - name: Push to dokku
-#        uses: dokku/github-action@master
-#        with:
-#          branch: 'master'
-#          git_push_flags: '--force'
-#          git_remote_url: ${{ vars.STAGE_REMOTE_URL }}
-#          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Push to dokku
+        uses: dokku/github-action@master
+        with:
+          branch: 'master'
+          git_push_flags: '--force'
+          git_remote_url: ${{ vars.STAGE_REMOTE_URL }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
