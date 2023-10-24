@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 concurrency:
-   group: ${{ github.workflow }}-${{ github.ref }}
-   cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
+#
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2.9.0
         with:
