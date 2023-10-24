@@ -1,7 +1,7 @@
 name: Test ANK
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -18,30 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: master
-          fetch-depth: 0
+      - name: Build the code
       - run: |
-            git status
-      - run: echo "${{ github.workflow }}-${{ github.ref }}"
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3.13.0
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-#
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2.9.0
-        with:
-          gradle-version: 7.6
-          arguments: build
-
-#      - name: Push to dokku
-#        uses: dokku/github-action@master
-#        with:
-#          branch: 'master'
-#          git_push_flags: '--force'
-#          git_remote_url: ${{ vars.STAGE_REMOTE_URL }}
-#          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+            echo "Starting code building"
+            sleep 1m
+            echo "Finis code building"
+            echo "Test 1"
