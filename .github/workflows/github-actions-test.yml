@@ -16,6 +16,6 @@ jobs:
 
     steps:
       - run: |
-          echo "Starting code building. Test 5"
+          echo "Starting code building. Test 6"
           sleep 1m
           echo "Finish code building"
