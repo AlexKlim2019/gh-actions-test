@@ -5,12 +5,12 @@ on:
     branches: [master]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: My group
   # cancel-in-progress: true
 
 jobs:
   build-and-test-on-pr:
-    name: Buil and Test on PR
+    name: Build and Test on PR
     
     runs-on: ubuntu-latest
 
