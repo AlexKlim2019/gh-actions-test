@@ -2,11 +2,7 @@ name: Test ANK
 
 on:
   pull_request:
-    branches:
-      - master
-
-permissions:
-  contents: read
+    branches: [master]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -14,7 +10,6 @@ concurrency:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
