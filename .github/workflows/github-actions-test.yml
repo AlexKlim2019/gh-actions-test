@@ -16,4 +16,4 @@ jobs:
 
     steps:
       - run: |
-            echo "Starting code building
+          echo "Starting code building
