@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - run: |
             git status
-      - run: echo "${{ github.repository }}"
+      - run: echo "${{ github.workflow }}-${{ github.ref }}"
 
       - name: Setup Java JDK
         uses: actions/setup-java@v3.13.0
