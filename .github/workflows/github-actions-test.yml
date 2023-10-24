@@ -8,6 +8,10 @@ on: [push]
 permissions:
   contents: read
 
+concurrency:
+   group: ${{ github.workflow }}-${{ github.ref }}
+   cancel-in-progress: true
+
 jobs:
   build:
 
@@ -20,19 +24,19 @@ jobs:
           fetch-depth: 0
       - run: |
             git status
-      - run: echo "${{ github.repository }}"
+      - run: echo "${{ github.workflow }}-${{ github.ref }}"
 
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3.13.0
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2.9.0
-        with:
-          gradle-version: 7.6
-          arguments: build
+#      - name: Setup Java JDK
+#        uses: actions/setup-java@v3.13.0
+#        with:
+#          java-version: '17'
+#          distribution: 'temurin'
+#
+#      - name: Build with Gradle
+#        uses: gradle/gradle-build-action@v2.9.0
+#        with:
+#          gradle-version: 7.6
+#          arguments: build
 
 #      - name: Push to dokku
 #        uses: dokku/github-action@master
