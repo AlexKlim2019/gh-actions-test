@@ -16,5 +16,5 @@ jobs:
 
     steps:
       - name: Build the code
-      - run: |
-            echo "Starting code building"
+        run: |
+            echo "Starting code building
