@@ -15,6 +15,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build the code
-        run: |
+      - run: |
             echo "Starting code building
