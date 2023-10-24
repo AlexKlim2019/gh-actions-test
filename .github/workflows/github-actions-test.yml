@@ -9,13 +9,12 @@ concurrency:
   # cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-test-on-pr:
+    name: Buil and Test on PR
+    
     runs-on: ubuntu-latest
 
     steps:
       - name: Build the code
       - run: |
             echo "Starting code building"
-            sleep 1m
-            echo "Finis code building"
-            echo "Test 1"
